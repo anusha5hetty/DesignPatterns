@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using DesignPatterns.FactoryPattern;
+using DesignPatterns.FactoryPattern.Pizzas;
 using DesignPatterns.SingletonPattern;
 using DesignPatterns.SpecificationPattern;
 using DesignPatterns.StrategyPattern;
@@ -28,14 +30,21 @@ Console.WriteLine("Hello, World!");
 //rubberDuck.Swim();
 
 // Singleton Pattern
-var x = LoggerDetails.LazyAutoLockInstance;
-Console.WriteLine("First Name with LazyAutoLockInstance: " + x.Name);
+//var x = LoggerDetails.LazyAutoLockInstance;
+//Console.WriteLine("First Name with LazyAutoLockInstance: " + x.Name);
 
-x = LoggerDetails.Lazy1Instance;
-Console.WriteLine("First Name with Lazy1Instance: " + x.Name);
+//x = LoggerDetails.Lazy1Instance;
+//Console.WriteLine("First Name with Lazy1Instance: " + x.Name);
 
-x = LoggerDetails.Instance;
-Console.WriteLine("First Name with Instance: " + x.Name);
+//x = LoggerDetails.Instance;
+//Console.WriteLine("First Name with Instance: " + x.Name);
 
-x = LoggerDetails.ThreadSafeInstance;
-Console.WriteLine("First Name with ThreadSafeInstance: " + x.Name);
+//x = LoggerDetails.ThreadSafeInstance;
+//Console.WriteLine("First Name with ThreadSafeInstance: " + x.Name);
+
+// Factory Pattern
+var ny = new NyPizzaStore();
+ny.OrderPizza("Cheeze");
+
+var chicago = new ChicagioPizzaStore();
+chicago.OrderPizza("Pepperoni");
